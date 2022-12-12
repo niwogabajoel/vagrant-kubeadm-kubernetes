@@ -12,7 +12,7 @@ echo "[TASK 2] Copy kube admin config to Vagrant user .kube directory"
 #chown -R vagrant:vagrant /home/vagrant/.kube
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown (id -u):$(id -g) $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 # Deploy flannel network
 echo "[TASK 3] Deploy flannel network"
