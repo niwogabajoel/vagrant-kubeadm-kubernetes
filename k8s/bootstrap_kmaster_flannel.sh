@@ -7,9 +7,12 @@ kubeadm init --apiserver-advertise-address=192.168.56.10 --pod-network-cidr=10.2
 
 # Copy Kube admin config
 echo "[TASK 2] Copy kube admin config to Vagrant user .kube directory"
-mkdir /home/vagrant/.kube
-cp /etc/kubernetes/admin.conf /home/vagrant/.kube/config
-chown -R vagrant:vagrant /home/vagrant/.kube
+#mkdir /home/vagrant/.kube
+#cp /etc/kubernetes/admin.conf /home/vagrant/.kube/config
+#chown -R vagrant:vagrant /home/vagrant/.kube
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown (id -u):$(id -g) $HOME/.kube/config
 
 # Deploy flannel network
 echo "[TASK 3] Deploy flannel network"
