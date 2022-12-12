@@ -89,3 +89,37 @@ vagrant up
 vagrant destroy -f
 ```
 
+
+
+
+git config --local user.name "niwogabajoel"
+git config --local user.email "niwoogabajoel@gmail.com"
+
+#User git
+Hostname gitlab.com
+IdentityFile ~/.ssh/id_ed25519_gitlab
+TCPKeepAlive yes
+IdentitiesOnly yes
+
+Host *.github.com
+AddKeysToAgent yes
+UseKeychain yes
+IdentityFile ~/.ssh/id_ed25519
+
+
+User git
+
+#Github
+ Host *.github.com
+ HostName github.com
+ User git
+ IdentityFile ~/.ssh/id_ed25519
+ IdentitiesOnly yes
+
+#Gitlab
+ Host *.gitlab.com
+ Hostname gitlab.com
+ User git
+ IdentityFile ~/.ssh/id_ed25519
+ TCPKeepAlive yes
+ IdentitiesOnly yes
