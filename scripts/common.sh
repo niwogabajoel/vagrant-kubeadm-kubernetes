@@ -1,21 +1,19 @@
 #!/bin/bash
 #
 # Common setup for all servers (Control Plane and Nodes)
-
+echo "[TASK 1] Common setup for all servers (Control Plane and Nodes)"
 set -euxo pipefail
 
 # Variable Declaration
-
 KUBERNETES_VERSION="1.23.6-00"
 
-# disable swap
+echo "[TASK 2] disable swap"
 sudo swapoff -a
 
 # keeps the swaf off during reboot
 (crontab -l 2>/dev/null; echo "@reboot /sbin/swapoff -a") | crontab - || true
 sudo apt-get update -y
-# Install CRI-O Runtime
-
+echo "[TASK 3] Install CRI-O Runtime"
 OS="xUbuntu_20.04"
 
 VERSION="1.23"
