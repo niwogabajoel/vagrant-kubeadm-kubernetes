@@ -47,7 +47,7 @@ echo "--- [DONE TASK 3] ---"
 
 echo "[TASK 4] Add apt repository for Kubernetes"
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 echo "--- [DONE TASK 4] ---"
 
 echo "[TASK 5] Install Kubernetes components Kubectl, kubeadm & kubelet"
