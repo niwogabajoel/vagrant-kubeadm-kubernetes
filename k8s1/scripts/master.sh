@@ -22,9 +22,9 @@ else
 fi
 
 sudo cp -i /etc/kubernetes/admin.conf /vagrant/configs/config
-sudo touch /vagrant/configs/join.sh
-sudo chmod +x /vagrant/configs/join.sh
-sudo kubeadm token create --print-join-command > /vagrant/configs/join.sh
+sudo touch /vagrant/join.sh
+sudo chmod +x /vagrant/join.sh
+sudo kubeadm token create --print-join-command > /vagrant/join.sh
 
 kubectl cluster-info
 kubectl get nodes
