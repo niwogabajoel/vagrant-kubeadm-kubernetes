@@ -4,7 +4,7 @@
 
 #Master
 echo "[TASK 6] Initialize Kubernetes cluster with Kubeadm command"
-sudo kubeadm init --control-plane-endpoint=master.ddx.com
+sudo kubeadm init --control-plane-endpoint=master
 sudo mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
